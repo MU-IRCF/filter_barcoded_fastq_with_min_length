@@ -1,1 +1,1 @@
-# extract_barcoded_fastq_with_max_length
+# extract barcoded fastq with min length

@@ -1,6 +1,6 @@
 #!/bin/env perl
 package split_by_barcode;
-# ABSTRACT: 
+# ABSTRACT: Filter FASTQ file for reads that have a barcode and that have a minimum length (not counting the barcode) 
 
 #=============================================================================
 # STANDARD MODULES AND PRAGMAS
@@ -16,7 +16,7 @@ use IO::Compress::Gzip;
 # Run as a command-line program if not used as a module
 main(@ARGV) if !caller();
 
-my $MAX_LENGTH;
+my $MIN_LENGTH;
 
 sub main {
 
@@ -26,7 +26,7 @@ sub main {
     # Get the name of the barcode file
     my $barcode_file = shift // die 'barcode file required';
 
-    $MAX_LENGTH    = shift // 64;
+    $MIN_LENGTH    = shift // 64;
 
     my $basename = basename_for($filename);
 
@@ -97,7 +97,7 @@ sub __matches_barcode {
             if (index($string,$barcode) == 0 ) {
                 my $length = length($string) - length($barcode);
 
-                return if $length < $MAX_LENGTH;
+                return if $length < $MIN_LENGTH;
 
                 return $barcode;   
             }
