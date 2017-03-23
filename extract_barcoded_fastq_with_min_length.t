@@ -8,7 +8,7 @@ use Test::More;
 
 use File::Slurper qw( read_text );
 
-system('./extract_barcoded_fastq_with_max_length sample.fastq barcodes 50');
+system('./extract_barcoded_fastq_with_min_length sample.fastq barcodes 50');
 
 system('gunzip -c sample.fastq.barcode_filtered.fastq.gz > result.fastq');
 system('gunzip -c sample.fastq.unmatched.fastq.gz > unmatched.fastq');

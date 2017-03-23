@@ -8,7 +8,7 @@ use 5.010;    # Require at least Perl version 5.10
 use strict;   # Must declare all variables before using them
 use warnings; # Emit helpful warnings
 use autodie;  # Fatal exceptions for common unrecoverable errors (e.g. open)
-use Bio::FASTQ::Tiny qw( process_fastq coderef_print_entry);
+use Bio::IRCF::FASTQ::Tiny qw( process_fastq coderef_print_entry);
 use Carp qw( croak);
 
 use IO::Compress::Gzip;

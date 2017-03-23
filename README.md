@@ -2,5 +2,5 @@
 
 ./extract_barcoded_fastq_with_min_length sample.fastq barcodes 50
 
-Depends on https://github.com/molecules/Bio-FASTQ-Tiny
+Depends on https://github.com/molecules/Bio-IRCF-FASTQ-Tiny
 
